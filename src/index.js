@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { StoreProvider } from './store';
+
 function emitComment(id) {
   setInterval(() => {
     window.dispatchEvent(
@@ -20,7 +22,9 @@ emitComment(3);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider>
+      <App />
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
